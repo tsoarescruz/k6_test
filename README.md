@@ -1,4 +1,4 @@
-# docker-compose-influxdb-grafana
+# docker Compose Grafana and Influxdb
 
 Multi-container Docker app built from the following services:
 
@@ -12,7 +12,6 @@ Useful for quickly setting up a monitoring stack for performance testing. Combin
 
 To start the app:
 
-1. Install [docker-compose](https://docs.docker.com/compose/install/) on the docker host.
 1. Clone this repo on the docker host.
 1. Optionally, change default credentials or Grafana provisioning.
 1. Run the following command from the root of the cloned repo:
@@ -27,6 +26,18 @@ To stop the app:
 docker-compose down
 ```
 
+## Run Sripts
+
+```
+docker-compose run -v $PWD/samples:/scripts k6 run --out influxdb=http://influxdb:8086/db0 -w /scripts/samples_test.js
+
+```
+
+```
+docker-compose run -v $PWD/samples:/scripts k6 run --out influxdb=http://influxdb:8086/db0 -w /scripts/samples_script_test.js
+
+```
+
 ## Ports
 
 The services in the app run on the following ports:
@@ -38,12 +49,6 @@ The services in the app run on the following ports:
 | 127.0.0.1:8888 | Chronograf |
 
 Note that Chronograf does not support username/password authentication. Anyone who can connect to the service has full admin access. Consequently, the service is not publically exposed and can only be access via the loopback interface on the same machine that runs docker.
-
-If docker is running on a remote machine that supports SSH, use the following command to setup an SSH tunnel to securely access Chronograf by forwarding port 8888 on the remote machine to port 8888 on the local machine:
-
-```
-ssh [options] <user>@<docker-host> -L 8888:localhost:8888 -N
-```
 
 ## Volumes
 
