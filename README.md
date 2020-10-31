@@ -82,3 +82,5 @@ To provision additional data sources, see the Grafana [documentation](http://doc
 By default, the app does not create any Grafana dashboards. An example dashboard that's configured to work with [artillery-plugin-influxdb](https://github.com/Nordstrom/artillery-plugin-influxdb) is located at `./grafana-provisioning/dashboards/artillery.json.example`. To use this dashboard, rename it to `artillery.json`.
 
 To provision additional dashboards, see the Grafana [documentation](http://docs.grafana.org/administration/provisioning/#dashboards) and add a config file to `./grafana-provisioning/dashboards/` before starting the app.
+
+In this project, i used this official K6 dashboard [k6 Load Testing Results](https://grafana.com/grafana/dashboards/2587); for used then is so import id `2587` in running grafana `http://localhost:3000/dashboard/new?orgId=1`
