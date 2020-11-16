@@ -6,7 +6,7 @@ export const requests = new Counter('http_reqs');
 // you can specify stages of your test (ramp up/down patterns) through the options object
 // target is the number of VUs you are aiming for
 export const options = {
-  vus: 800,
+  vus: 00,
   duration: '15m',
   // stages: [
   //   { target: 20, duration: '30s' },
@@ -19,7 +19,7 @@ export const options = {
 };
 export default function () {
   // our HTTP request, note that we are saving the response to res, which can be accessed later
-  const res = http.get('jarvis-gateway-beta-router-lb.cs-router.tsuru.globoi.com/healthcheck');
+  const res = http.get('http://be.jarvis-beta.globoi.com/healthcheck');
   sleep(1);
   const checkRes = check(res, {
     'status is 200': (r) => r.status === 200,
