@@ -6,7 +6,7 @@ export const requests = new Counter('http_reqs');
 // you can specify stages of your test (ramp up/down patterns) through the options object
 // target is the number of VUs you are aiming for
 export const options = {
-  vus: 00,
+  vus: 800,
   duration: '15m',
   // stages: [
   //   { target: 20, duration: '30s' },
