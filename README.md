@@ -29,12 +29,12 @@ docker-compose down
 ## Run Sripts
 
 ```
-docker-compose run -v $PWD/samples:/scripts k6 run --out influxdb=http://influxdb:8086/db0 -w /scripts/samples_test.js
+docker-compose run -v $PWD/scripts:/scripts k6 run --out influxdb=http://influxdb:8086/db0 -w /scripts/request_jarvis_gateway_beta.js
 
 ```
 
 ```
-docker-compose run -v $PWD/samples:/scripts k6 run --out influxdb=http://influxdb:8086/db0 -w /scripts/samples_script_test.js
+docker-compose run -v $PWD/scripts:/scripts k6 run --out influxdb=http://influxdb:8086/db0 -w /scripts/request_be_jarvis_beta.js
 
 ```
 
