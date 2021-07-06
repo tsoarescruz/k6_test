@@ -16,7 +16,7 @@ To start the app:
 1. Optionally, change default credentials or Grafana provisioning.
 1. Run the following command from the root of the cloned repo:
 ```
-docker-compose up -d
+docker-compose up
 ```
 
 To stop the app:
